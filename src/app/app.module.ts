@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatSelectModule, MatSidenavModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,9 @@ import {MatButtonModule, MatIconModule} from '@angular/material';
     BrowserModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

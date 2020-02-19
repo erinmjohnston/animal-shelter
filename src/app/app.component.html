@@ -1,16 +1,43 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <mat-toolbar color="primary">
-      <button mat-icon-button>
-        <mat-icon>pets</mat-icon>
-      </button>
-      <span style="width: 15%;"></span>
-      <a href="#" mat-button>About</a>
-      <a href="#" mat-button>Adopt</a>
-      <a href="#" mat-button>Volunteer</a>
-      <a href="#" mat-button>Lost/Found</a>
-      <a href="#" mat-button>Donate</a>
-  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-toolbar color="primary">
+        <button mat-icon-button id="paw">
+          <mat-icon>pets</mat-icon>
+        </button>
+        <span style="width: 15%;"></span>
+        <a href="#" mat-button>About</a>
+        <a href="#" mat-button>Adopt</a>
+        <a href="#" mat-button>Volunteer</a>
+        <a href="#" mat-button>Lost/Found</a>
+        <a href="#" mat-button>Donate</a>
+    </mat-toolbar>
+  </mat-sidenav-container>
+  <div id="head">
+    <img id="pets" src="../pets.jpg"/>
+    <h1 id="find">Find your next companion.</h1>
+    <div id="search-row">
+        <mat-form-field class="selectors">
+          <mat-select>
+            <mat-label>Pet Type</mat-label>
+            <mat-option>Dog</mat-option>
+            <mat-option>Puppy</mat-option>
+            <mat-option>Cat</mat-option>
+            <mat-option>Kitten</mat-option>
+            <mat-option>Rodent</mat-option>
+            <mat-option>Bird</mat-option>
+            <mat-option>Reptile</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="selectors">
+          <mat-select>
+            <mat-label>Gender</mat-label>
+            <mat-option>Male</mat-option>
+            <mat-option>Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-flat-button color="accent" id="search">Search</button>
+    </div>
+  </div>
 </div>
 
 

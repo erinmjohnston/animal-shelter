@@ -1,8 +1,48 @@
 mat-toolbar {
   min-height: 6vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .mat-toolbar-single-row {
   height: 6vh;
 }
 
+#pets {
+  width: 100%;
+  position: fixed;
+  top: 6vh;
+  left: 0;
+}
+
+#find {
+  position: absolute;
+  left: 50%;
+  top: 4vh;
+  transform: translate(-50%, 50%);
+}
+
+.selectors {
+  top: 16vh;
+  flex-basis: auto;
+
+}
+
+.mat-form-field-infix {
+  background-color: #fafafa;
+}
+
+#search {
+  top: 16vh;
+  flex-basis: auto;
+
+}
+
+#search-row {
+  display: inline-flex;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  justify-content: center;
+}
