@@ -1,0 +1,8 @@
+mat-toolbar {
+  min-height: 6vh;
+}
+
+.mat-toolbar-single-row {
+  height: 6vh;
+}
+
