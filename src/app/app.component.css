@@ -26,7 +26,6 @@ mat-toolbar {
 .selectors {
   top: 16vh;
   flex-basis: auto;
-
 }
 
 .mat-form-field-infix {
@@ -36,13 +35,13 @@ mat-toolbar {
 #search {
   top: 16vh;
   flex-basis: auto;
-
+  height: auto;
 }
 
 #search-row {
   display: inline-flex;
+  justify-content: center;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
-  justify-content: center;
 }
