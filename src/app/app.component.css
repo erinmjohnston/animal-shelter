@@ -24,7 +24,7 @@ mat-toolbar {
 }
 
 .selectors {
-  top: 16vh;
+  top: 17vh;
   flex-basis: auto;
 }
 
@@ -33,9 +33,9 @@ mat-toolbar {
 }
 
 #search {
-  top: 16vh;
+  top: 18vh;
   flex-basis: auto;
-  height: auto;
+  height: 40px;
 }
 
 #search-row {
@@ -44,4 +44,8 @@ mat-toolbar {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
 }

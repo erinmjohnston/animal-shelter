@@ -1,6 +1,9 @@
 @import 'theme.css';
 
-h1 {
+* {
   font-family: Roboto;
+}
+
+h1 {
   font-size: 3vw;
 }
