@@ -9,6 +9,10 @@ mat-toolbar {
   height: 6vh;
 }
 
+a {
+  color: white;
+}
+
 #pets {
   width: 100%;
   position: fixed;
@@ -44,8 +48,4 @@ mat-toolbar {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: black;
 }
