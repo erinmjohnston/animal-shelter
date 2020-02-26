@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
-import { MatButtonModule, MatIconModule, MatSelectModule, MatSidenavModule } from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatSelectModule, MatSidenavModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { MatButtonModule, MatIconModule, MatSelectModule, MatSidenavModule } fro
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
