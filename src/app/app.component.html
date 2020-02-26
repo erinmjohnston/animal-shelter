@@ -14,7 +14,7 @@
   </mat-sidenav-container>
   <div id="head">
     <img id="pets" src="../assets/img/pets.jpg"/>
-    <h1 id="find">Find your next companion.</h1>
+    <h1 id="find" style="font-size: calc((3.3vw + 4vh) / 2);">Find your next companion.</h1>
     <div id="search-row">
         <mat-form-field class="selectors">
           <mat-label>Pet Type</mat-label>
@@ -22,14 +22,14 @@
             <mat-option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <span style="width: 5vw"></span>
+        <span style="width: 5vw; min-width: 10px;"></span>
         <mat-form-field class="selectors">
           <mat-label>Gender</mat-label>
           <mat-select>
             <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.viewValue}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <span style="width: 5vw"></span>
+        <span style="width: 5vw; min-width: 10px;"></span>
         <button mat-flat-button color="accent" id="search">Search</button>
     </div>
   </div>

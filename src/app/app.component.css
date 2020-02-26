@@ -23,11 +23,12 @@ a {
 #find {
   position: absolute;
   left: 50%;
-  top: 4vh;
   transform: translate(-50%, 50%);
 }
 
 .selectors {
+  min-width: 100px;
+  width: 10vw;
   top: 17vh;
   flex-basis: auto;
 }
@@ -39,7 +40,7 @@ a {
 #search {
   top: 18vh;
   flex-basis: auto;
-  height: 40px;
+  max-height: 40px;
 }
 
 #search-row {
