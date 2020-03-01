@@ -1,82 +1,14 @@
-#navBar {
-  min-height: 6vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.mat-toolbar-single-row {
-  height: 6vh;
-}
 
 a {
   color: white;
-}
-
-#pets {
-  width: 100%;
-  position: absolute;
-  top: 6vh;
-  left: 0;
-  display: block;
-}
-
-#find {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.selectors {
-  min-width: 100px;
-  width: 10vw;
-  top: 15vh;
-  flex-basis: auto;
+  text-align: "center";
 }
 
 .mat-form-field-infix {
   background-color: #fafafa;
 }
 
-#search {
-  top: 16vh;
-  flex-basis: auto;
-  max-height: 40px;
-}
 
-#search-row {
-  display: inline-flex;
-  justify-content: center;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  position: fixed;
-}
 
-#footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  left: 0;
-}
 
-#footers {
-  display: inline-flex;
-  justify-content: center;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-}
 
-.footerBlock {
-  padding: 30px;
-}
-
-i {
-  padding: 10px;
-}
-
-.toby {
-  max-width: 300px;
-  top: 300px;
-  display: block;
-}

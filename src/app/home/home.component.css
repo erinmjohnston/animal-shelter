@@ -1,0 +1,40 @@
+#pets {
+    width: 100%;
+    position: absolute;
+    top: 6vh;
+    left: 0;
+    display: block;
+}
+
+#find {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.selectors {
+    min-width: 100px;
+    width: 10vw;
+    top: 15vh;
+    flex-basis: auto;
+}
+
+#search {
+    top: 16vh;
+    flex-basis: auto;
+    max-height: 40px;
+}
+
+#search-row {
+    display: inline-flex;
+    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    position: fixed;
+}
+
+.toby {
+    max-width: 300px;
+    top: 300px;
+    display: block;
+}

@@ -1,74 +1,15 @@
 <!doctype html>
 <html lang="en">
-<body>
-<div style="text-align:center">
-  <mat-sidenav-container>
-    <mat-toolbar color="primary" id="navBar">
-        <button mat-icon-button>
-          <mat-icon>pets</mat-icon>
-        </button>
-        <span style="width: 15%;"></span>
-        <button mat-button>About</button>
-        <a href="#" mat-button>Adopt</a>
-        <a href="#" mat-button>Volunteer</a>
-        <a href="#" mat-button>Lost/Found</a>
-        <a href="#" mat-button>Donate</a>
-    </mat-toolbar>
-  </mat-sidenav-container>
-  <div id="head">
-    <img id="pets" src="../assets/img/pets.jpg"/>
-    <h1 id="find" style="font-size: calc((3.3vw + 4vh) / 2);">Find your next companion.</h1>
-    <div id="search-row">
-        <mat-form-field class="selectors">
-          <mat-label>Pet Type</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <span style="width: 5vw; min-width: 10px;"></span>
-        <mat-form-field class="selectors">
-          <mat-label>Gender</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.viewValue}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <span style="width: 5vw; min-width: 10px;"></span>
-        <button mat-flat-button color="accent" id="search">Search</button>
-    </div>
-  </div>
-</div>
+  <body>
 
-<div>
-  <mat-card class="toby">
-    <mat-card-header>
-      <mat-card-title>Toby</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="../assets/img/toby.jpg">
-  </mat-card>
-</div>
+    <!-- header-->
+    <app-header></app-header>
 
+    <router-outlet></router-outlet>
+    
+    <!-- footer -->
+    <app-footer></app-footer>
 
-<footer id="footer">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <div id="footers">
-        <div class="footerBlock">
-          <div class="socials">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-twitter"></i>
-          </div>
-        </div>
-        <div class="footerBlock">
-          <i class="fa fa-phone"></i>
-          <div style="font-size: small; display: inline-block;">(540) 000-0000</div>
-          <i class="fa fa-envelope"></i>
-          <div style="font-size: small; display: inline-block;">hello@animalshelter.com</div>
-        </div>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</footer>
-</body>
+  </body>
 </html>
 
