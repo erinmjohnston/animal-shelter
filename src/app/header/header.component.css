@@ -1,0 +1,10 @@
+#navBar {
+    min-height: 6vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+.mat-toolbar-single-row {
+    height: 6vh;
+}
