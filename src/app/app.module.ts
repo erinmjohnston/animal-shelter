@@ -5,12 +5,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
-import {MatButtonModule, MatCardModule, MatIconModule, MatSelectModule, MatSidenavModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDatepickerModule,
+  MatIconModule,
+  MatInputModule,
+  MatNativeDateModule,
+  MatSelectModule,
+  MatSidenavModule
+} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
+import { LostFoundComponent } from './lost-found/lost-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     HeaderComponent,
     VolunteerComponent,
-    HomeComponent
+    HomeComponent,
+    LostFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +42,10 @@ import { HomeComponent } from './home/home.component';
     MatSelectModule,
     MatCardModule,
     MatCheckboxModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,3 +18,26 @@ textarea {
     border: 1px solid;
 }
 
+#volunteerForm {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#submitMessage {
+  margin-top: 50px;
+  display: none;
+}
+
+mat-checkbox {
+  width: 85%;
+}
+
+.form-check {
+  padding-left: 0;
+}

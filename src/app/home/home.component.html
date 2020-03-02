@@ -10,7 +10,7 @@
           </mat-select>
         </mat-form-field>
         <span style="width: 5vw; min-width: 10px;"></span>
-        <mat-form-field class="selectors">
+        <mat-form-field class="selectors" id="genderSelect">
           <mat-label>Gender</mat-label>
           <mat-select [(value)]="selectedGender">
             <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.viewValue}}</mat-option>
@@ -20,7 +20,7 @@
         <button mat-flat-button color="accent" id="search" (click)="searchForPets(selectedPetType, selectedGender)">Search</button>
       </div>
     <div class="row">
-      <h1 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h1>
+      <h2 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h2>
     </div>
     </div>
 </div>

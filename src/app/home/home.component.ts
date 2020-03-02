@@ -34,9 +34,15 @@ export class HomeComponent implements OnInit {
   searchMessage = '';
 
   searchForPets(petType, gender) {
-    const petsOfTheMonth = document.getElementById('petsOfMonth');
-    petsOfTheMonth.style.display = 'none';
-    this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+    if (petType !== '' && gender !== '') {
+      const petsOfTheMonth = document.getElementById('petsOfMonth');
+      petsOfTheMonth.style.display = 'none';
+      this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+    }
+    else {
+      const petTypeError = document.getElementById('petTypeError');
+      petTypeError.style.display = 'block';
+    }
   }
 
   constructor() {}
