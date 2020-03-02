@@ -1,40 +1,54 @@
-#pets {
-    width: 100%;
-    position: absolute;
+
+.container-fluid {
+  padding: 0;
+}
+
+#cover {
     top: 6vh;
-    left: 0;
-    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.heading {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: calc((3.3vw + 4vh) / 2);
 }
 
 #find {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
+  top: 6vh;
 }
 
 .selectors {
     min-width: 100px;
     width: 10vw;
-    top: 15vh;
     flex-basis: auto;
 }
 
 #search {
-    top: 16vh;
     flex-basis: auto;
     max-height: 40px;
+  margin-top: 5px;
 }
 
 #search-row {
-    display: inline-flex;
-    justify-content: center;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    position: fixed;
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
-.toby {
-    max-width: 300px;
-    top: 300px;
-    display: block;
+#month {
+  position: relative;
+  top: -9vh;
+}
+
+#pets {
+  margin-bottom: 100px;
+}
+
+.petPics {
+  height: 280px;
+  object-fit: cover;
 }
