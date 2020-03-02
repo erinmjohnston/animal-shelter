@@ -1,23 +1,32 @@
-
-<div class="centered">
-  <h1 style="font-size: calc((3.3vw + 4vh) / 2);">Volunteer Application</h1>
-  <p> Thank you for your interest in volunteering! Please fill out the application below to get started.</p>
-  <form>
-    <div>
-        <input matInput id="textinput" placeholder="First name">
-        <input matInput id="textinput" placeholder="Last name">
-    </div>
-    <div>
-        <input matInput id="textinput" placeholder="Email address">
-        <input matInput id="textinput" placeholder="Phone number">
-    </div>
-        <p> Why would you like to volunteer? </p>
+<!doctype html>
+<html lang="en">
+  <div class="centered container">
+    <h1>Volunteer Application</h1>
+    <p>Thank you for your interest in volunteering! Please fill out the application below to get started.</p>
+    <form>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="First name">
+          <input matInput class="textInput form-control" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="Email address">
+          <input matInput class="textInput form-control" placeholder="Phone number">
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Why would you like to volunteer?</p>
         <textarea rows="10"></textarea>
-    
+      </div>
+      <div class="form-group">
         <p>What areas are you interested in volunteering?</p>
-          <mat-checkbox>Long-term foster</mat-checkbox><br>
-          <mat-checkbox>In-shelter care</mat-checkbox><br>
-          <mat-checkbox>Animal field trips</mat-checkbox><br>
-          <mat-checkbox>Ambassador</mat-checkbox> 
-  </form>
-</div>
+        <mat-checkbox class="form-control">Long-term foster</mat-checkbox><br>
+        <mat-checkbox class="form-control">In-shelter care</mat-checkbox><br>
+        <mat-checkbox class="form-control">Animal field trips</mat-checkbox><br>
+        <mat-checkbox class="form-control">Ambassador</mat-checkbox>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </div>

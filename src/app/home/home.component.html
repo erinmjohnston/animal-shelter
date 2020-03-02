@@ -1,7 +1,8 @@
 <div id="home">
-    <img id="pets" src="../assets/img/pets.jpg"/>
-    <h1 id="find" style="font-size: calc((3.3vw + 4vh) / 2);">Find your next companion.</h1>
-    <div id="search-row">
+  <div class="container-fluid">
+      <img id="cover" src="../assets/img/pets.jpg"/>
+      <h1 class="heading" id="find">Find your next companion.</h1>
+      <div id="search-row" class="row justify-content-center">
         <mat-form-field class="selectors">
           <mat-label>Pet Type</mat-label>
           <mat-select>
@@ -17,14 +18,48 @@
         </mat-form-field>
         <span style="width: 5vw; min-width: 10px;"></span>
         <button mat-flat-button color="accent" id="search">Search</button>
+      </div>
     </div>
 </div>
 
-<div>
-    <mat-card class="toby">
-      <mat-card-header>
-        <mat-card-title>Toby</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../assets/img/toby.jpg">
-    </mat-card>
+<div class="container" id="pets">
+  <div class="row">
+    <h1 class="heading" id="month">Pets of the Month</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Toby</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/toby.jpg">
+        <mat-card-content>
+          <p>Siberian Husky, Male, 3 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Simon</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/simon.jpg">
+        <mat-card-content>
+          <p>Part Siamese, Male, 6 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Lola</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/lola.jpg">
+        <mat-card-content>
+          <p>Chinchilla, Female, 2 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
 </div>
