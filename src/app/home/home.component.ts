@@ -16,17 +16,28 @@ export class HomeComponent implements OnInit {
   title = 'animalShelter';
 
   pets: Option[] = [
-    {value: 'dog-puppy', viewValue: 'Dog/Puppy'},
-    {value: 'cat-kitten', viewValue: 'Cat/Kitten'},
-    {value: 'rodent', viewValue: 'Rodent'},
-    {value: 'bird', viewValue: 'Bird'},
-    {value: 'reptile', viewValue: 'Reptile'}
+    {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
+    {value: 'Cats and Kittens', viewValue: 'Cat/Kitten'},
+    {value: 'Rodents', viewValue: 'Rodent'},
+    {value: 'Birds', viewValue: 'Bird'},
+    {value: 'Reptiles', viewValue: 'Reptile'}
     ];
 
   genders: Option[] = [
-    {value: 'male', viewValue: 'Male'},
-    {value: 'female', viewValue: 'Female'}
+    {value: 'Male', viewValue: 'Male'},
+    {value: 'Female', viewValue: 'Female'}
   ];
+
+  selectedPetType = '';
+  selectedGender = '';
+
+  searchMessage = '';
+
+  searchForPets(petType, gender) {
+    const petsOfTheMonth = document.getElementById('petsOfMonth');
+    petsOfTheMonth.style.display = 'none';
+    this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+  }
 
   constructor() {}
   ngOnInit() {}

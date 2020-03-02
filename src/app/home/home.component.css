@@ -39,12 +39,17 @@
   transform: translate(-50%, 50%);
 }
 
+#searchMessage {
+  position: relative;
+  top: -9vh;
+}
+
 #month {
   position: relative;
   top: -9vh;
 }
 
-#pets {
+#petsOfMonth {
   margin-bottom: 100px;
 }
 
