@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import {LostFoundComponent} from './lost-found/lost-found.component';
+import {AdoptComponent} from './adopt/adopt.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'lost-found',
     component: LostFoundComponent
+  },
+  {
+    path: 'adopt',
+    component: AdoptComponent
   }
 ];
 

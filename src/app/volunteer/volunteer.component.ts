@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Volunteer } from '../volunteer';
+import { Volunteer } from '../models/volunteer';
 
 @Component({
   selector: 'app-volunteer',

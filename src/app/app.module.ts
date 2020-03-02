@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
 import { LostFoundComponent } from './lost-found/lost-found.component';
+import { AdoptComponent } from './adopt/adopt.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LostFoundComponent } from './lost-found/lost-found.component';
     HeaderComponent,
     VolunteerComponent,
     HomeComponent,
-    LostFoundComponent
+    LostFoundComponent,
+    AdoptComponent
   ],
   imports: [
     BrowserModule,

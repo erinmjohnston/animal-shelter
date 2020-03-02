@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Option {
-  value: string;
-  viewValue: string;
-}
+import { Option } from '../models/option';
+import {LostAnimal} from '../models/lost-animal';
 
 @Component({
   selector: 'app-lost-found',
@@ -20,10 +17,15 @@ export class LostFoundComponent implements OnInit {
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
 
-  genders: Option[] = [
-    {value: 'Male', viewValue: 'Male'},
-    {value: 'Female', viewValue: 'Female'}
-  ];
+  lostAnimalModel = new LostAnimal('', '', '', '', '', '', null, false,
+    '', '', '', '', null);
+
+  formSubmit() {
+    const form = document.getElementById('lostAnimalForm');
+    form.style.display = 'none';
+    const message = document.getElementById('submitMessage');
+    message.style.display = 'block';
+  }
 
   constructor() { }
 

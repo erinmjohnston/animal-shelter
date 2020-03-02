@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Option} from '../models/option';
 
-interface Option {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-home',
@@ -16,6 +13,7 @@ export class HomeComponent implements OnInit {
   title = 'animalShelter';
 
   pets: Option[] = [
+    {value: 'Any', viewValue: 'Any'},
     {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
     {value: 'Cats and Kittens', viewValue: 'Cat/Kitten'},
     {value: 'Rodents', viewValue: 'Rodent'},
@@ -24,6 +22,7 @@ export class HomeComponent implements OnInit {
     ];
 
   genders: Option[] = [
+    {value: 'Any', viewValue: 'Any'},
     {value: 'Male', viewValue: 'Male'},
     {value: 'Female', viewValue: 'Female'}
   ];
