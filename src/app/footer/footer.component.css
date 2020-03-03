@@ -1,6 +1,6 @@
 #footer {
-    position: fixed;
-    bottom: 0px;
+    position: relative;
+    bottom: 0;
     width: 100%;
     left: 0;
 }
@@ -19,4 +19,12 @@
 
 i {
   padding: 10px;
+}
+
+.mat-toolbar {
+  min-height: 90px;
+}
+
+.mat-toolbar-row {
+  min-height: 80px;
 }
