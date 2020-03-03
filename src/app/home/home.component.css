@@ -52,6 +52,10 @@
   margin-bottom: 100px;
 }
 
+#petDesc {
+  font-weight: 570;
+}
+
 .petPics {
   height: 280px;
   object-fit: cover;
