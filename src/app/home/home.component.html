@@ -1,0 +1,69 @@
+<div id="home">
+  <div class="container-fluid">
+      <img id="cover" src="../assets/img/pets.jpg"/>
+      <h1 class="row heading" id="find">Find your next companion.</h1>
+      <div id="search-row" class="row justify-content-center">
+        <mat-form-field class="selectors">
+          <mat-label>Pet Type</mat-label>
+          <mat-select [(value)]="selectedPetType">
+            <mat-option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span style="width: 5vw; min-width: 10px;"></span>
+        <mat-form-field class="selectors" id="genderSelect">
+          <mat-label>Gender</mat-label>
+          <mat-select [(value)]="selectedGender">
+            <mat-option *ngFor="let gender of genders" [value]="gender.value">{{gender.viewValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span style="width: 5vw; min-width: 10px;"></span>
+        <button mat-flat-button color="accent" id="search" (click)="searchForPets(selectedPetType, selectedGender)">Search</button>
+      </div>
+    <div class="row">
+      <h2 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h2>
+    </div>
+    </div>
+</div>
+
+<div class="container" id="petsOfMonth">
+  <div class="row">
+    <h1 class="heading" id="month">Pets of the Month</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Toby</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/toby.jpg">
+        <mat-card-content>
+          <p id="petDesc">Siberian Husky, Male, 3 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Simon</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/simon.jpg">
+        <mat-card-content>
+          <p id="petDesc">Part Siamese, Male, 6 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="toby">
+        <mat-card-header>
+          <mat-card-title>Lola</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="petPics" src="../assets/img/lola.jpg">
+        <mat-card-content>
+          <p id="petDesc">Chinchilla, Female, 2 years old</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+</div>
+
