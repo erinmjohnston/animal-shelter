@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Option } from '../models/option';
+import { AdoptionApplication } from '../models/adoption-application';
 
 @Component({
   selector: 'app-adopt',
@@ -15,6 +16,16 @@ export class AdoptComponent implements OnInit {
     {value: 'Birds', viewValue: 'Bird'},
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
+
+  adoptionApplicationModel = new AdoptionApplication('', '', '', null, '', '',
+  '', '', '', '', '', '');
+
+  formSubmit() {
+    const form = document.getElementById('adoptForm');
+    form.style.display = 'none';
+    const message = document.getElementById('submitMessage');
+    message.style.display = 'block';
+  }
 
   constructor() { }
 

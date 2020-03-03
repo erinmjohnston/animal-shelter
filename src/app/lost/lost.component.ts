@@ -4,10 +4,10 @@ import {LostAnimal} from '../models/lost-animal';
 
 @Component({
   selector: 'app-lost-found',
-  templateUrl: './lost-found.component.html',
-  styleUrls: ['./lost-found.component.css']
+  templateUrl: './lost.component.html',
+  styleUrls: ['./lost.component.css']
 })
-export class LostFoundComponent implements OnInit {
+export class LostComponent implements OnInit {
 
   pets: Option[] = [
     {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
