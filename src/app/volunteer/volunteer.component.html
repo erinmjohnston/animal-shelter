@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <div class="container">
+    <div class="centered" id="volunteerForm">
+      <h1>Volunteer Application</h1>
+      <p>Thank you for your interest in volunteering! Please fill out the application below to get started.</p>
+      <form #volunteerForm="ngForm">
+        <div class="form-group col-xs-6">
+          <div class="row">
+            <input matInput class="textInput form-control" placeholder="First name" name="firstName"
+                   [(ngModel)]="volunteerModel.firstName">
+            <input matInput class="textInput form-control" placeholder="Last name" name="lastName"
+                   [(ngModel)]="volunteerModel.lastName">
+          </div>
+        </div>
+        <div class="form-group col-xs-6">
+          <div class="row">
+            <input matInput class="textInput form-control" placeholder="Email address" name="email"
+                   [(ngModel)]="volunteerModel.email">
+            <input matInput class="textInput form-control" placeholder="Phone number" name="phone"
+                   [(ngModel)]="volunteerModel.phone">
+          </div>
+        </div>
+        <div class="form-group">
+          <p>Why would you like to volunteer?</p>
+          <textarea rows="10" name="volunteerReason" [(ngModel)]="volunteerModel.volunteerReason"></textarea>
+        </div>
+        <div class="form-group">
+          <p>What areas are you interested in volunteering?</p>
+          <div class="form-check" name="volunteerAreas">
+            <mat-checkbox name="volunteerAreas" value="long-termFoster" class="form-control" [(ngModel)]="volunteerModel.longTermFoster">Long-term foster</mat-checkbox><br>
+            <mat-checkbox name="volunteerAreas" value="in-shelterCare" class="form-control" [(ngModel)]="volunteerModel.inShelter">In-shelter care</mat-checkbox><br>
+            <mat-checkbox name="volunteerAreas" value="fieldTrips" class="form-control" [(ngModel)]="volunteerModel.fieldTrips">Animal field trips</mat-checkbox><br>
+            <mat-checkbox name="volunteerAreas" value="ambassador" class="form-control" [(ngModel)]="volunteerModel.ambassador">Ambassador</mat-checkbox>
+          </div>
+        </div>
+        <button class="btn btn-primary" (click)="formSubmit()">Submit</button>
+      </form>
+    </div>
+    <div class="centered" id="submitMessage">
+      <h2>Thank you for submitting your volunteer form.</h2>
+      <p>This is the information you submitted:</p>
+      {{volunteerModel | json}}
+    </div>
+  </div>

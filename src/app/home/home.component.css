@@ -1,0 +1,58 @@
+
+.container-fluid {
+  padding: 0;
+}
+
+#cover {
+    top: 6vh;
+    position: relative;
+    width: 100%;
+}
+
+.heading {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#find {
+  top: 6vh;
+}
+
+.selectors {
+    min-width: 100px;
+    width: 10vw;
+    flex-basis: auto;
+}
+
+#search {
+    flex-basis: auto;
+    max-height: 40px;
+  margin-top: 5px;
+}
+
+#search-row {
+  position: absolute;
+  top: 13vh;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#searchMessage {
+  position: relative;
+  top: -9vh;
+}
+
+#month {
+  position: relative;
+  top: -9vh;
+}
+
+#petsOfMonth {
+  margin-bottom: 100px;
+}
+
+.petPics {
+  height: 280px;
+  object-fit: cover;
+}

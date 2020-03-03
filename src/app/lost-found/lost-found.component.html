@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<div class="container">
+  <div class="centered" id="lostAnimalForm">
+    <h1>Lost Animal Report</h1>
+    <p>Please fill out the form as completely as possible to help us identify your lost pet.</p>
+    <form #lostAnimalForm="ngForm">
+      <h2>Animal Information</h2>
+      <div class="form-group col-xs-6">
+        <div class="row">
+            <select required class="textInput custom-select" id="petTypeSelect" [(ngModel)]="lostAnimalModel.petType" name="petType">
+              <option value="" disabled>Pet Type</option>
+              <option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</option>
+            </select>
+            <input matInput required class="textInput form-control" placeholder="Animal Name" name="petName"
+                   [(ngModel)]="lostAnimalModel.petName">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput required class="textInput form-control" placeholder="Animal Breed" name="breed"
+                 [(ngModel)]="lostAnimalModel.breed">
+          <input matInput required class="textInput form-control" placeholder="Primary Color/Pattern" name="color"
+                 [(ngModel)]="lostAnimalModel.color">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+            <input matInput class="textInput form-control" placeholder="Date last seen" [matDatepicker]="picker" name="date"
+                  [(ngModel)]="lostAnimalModel.date">
+            <mat-datepicker-toggle class="datepicker" matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker class="datepicker" #picker></mat-datepicker>
+          <input matInput class="textInput form-control" placeholder="Location last seen" id="locationInput" name="location"
+                 [(ngModel)]="lostAnimalModel.lastLocation">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <p>Upload an image of the animal:</p>
+          <button mat-flat-button color="accent" id="chooseFile" name="file" [(ngModel)]="lostAnimalModel.image">
+            Choose File</button>
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <p>Is the animal wearing a collar/tags?</p>
+          <div class="form-check collarRadio">
+            <input type="radio" class="form-check-input" name="collar" value="true" [(ngModel)]="lostAnimalModel.collar">
+            Yes
+          </div>
+          <div class="form-check collarRadio">
+            <input type="radio" class="form-check-input" name="collar" value="false" [(ngModel)]="lostAnimalModel.collar">
+            No
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Give a physical description of the animal (any distinguishing markings/features, scars, etc)</p>
+        <textarea rows="10" name="physicalDescription" [(ngModel)]="lostAnimalModel.description"></textarea>
+      </div>
+      <h2>Owner Information</h2>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput required class="textInput form-control" placeholder="First name" name="firstName"
+                 [(ngModel)]="lostAnimalModel.ownerFirstName">
+          <input matInput required class="textInput form-control" placeholder="Last name" name="lastName"
+                 [(ngModel)]="lostAnimalModel.ownerLastName">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput required class="textInput form-control" placeholder="Email address" name="email"
+                 [(ngModel)]="lostAnimalModel.ownerEmail">
+          <input matInput required class="textInput form-control" placeholder="Phone number" name="phone"
+                 [(ngModel)]="lostAnimalModel.ownerPhone">
+        </div>
+      </div>
+      <button mat-flat-button color="accent" (click)="formSubmit()">Submit</button>
+    </form>
+  </div>
+  <div class="centered" id="submitMessage">
+    <h2>Thank you for submitting your lost animal report.</h2>
+    <p>This is the information you submitted:</p>
+    {{lostAnimalModel | json}}
+  </div>
+</div>

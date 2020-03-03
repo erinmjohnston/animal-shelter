@@ -1,0 +1,43 @@
+.centered {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.textInput {
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 40%;
+    border: 1px solid;
+    padding: 5px 0px 5px 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 85%;
+    border: 1px solid;
+}
+
+#volunteerForm {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#submitMessage {
+  margin-top: 50px;
+  display: none;
+}
+
+mat-checkbox {
+  width: 85%;
+}
+
+.form-check {
+  padding-left: 0;
+}

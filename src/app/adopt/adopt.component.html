@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<div class="container">
+  <div class="centered" id="adoptForm">
+    <h1>Adoption Application</h1>
+    <p>Thank you for your interest in adopting! Please fill out the application below to get started.</p>
+    <form #adoptForm="ngForm">
+      <h2>Personal Information</h2>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="First name" name="firstName">
+          <input matInput class="textInput form-control" placeholder="Last name" name="lastName">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="Email address" name="email">
+          <input matInput class="textInput form-control" placeholder="Phone number" name="phone">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control fullwidth" placeholder="Street address" name="email">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control fullwidth" placeholder="Street address 2" name="email">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="City" name="email">
+          <input matInput class="textInput form-control" placeholder="State" name="phone">
+        </div>
+      </div>
+      <h2>Animal Information</h2>
+      <div class="form-group">
+        <div class="row">
+          <select required class="textInput custom-select" id="petTypeSelect">
+            <option disabled>Pet Type</option>
+            <option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</option>
+          </select>
+          <input matInput required class="textInput form-control" placeholder="Animal Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Why would you like to adopt?</p>
+        <textarea rows="10" name="adoptReason"></textarea>
+      </div>
+      <div class="form-group">
+        <p>What is your prior experience with pets?</p>
+        <textarea rows="10" name="petExperience"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</div>
