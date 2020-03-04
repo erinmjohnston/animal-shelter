@@ -44,6 +44,24 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  captionText = ""
+  modalSrc = ""
+
+  //displays the image modal 
+  show = (name, text) => {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    this.modalSrc = "".concat("../assets/img/", name, ".jpg"); //"../assets/img/lola.jpg"
+    this.captionText = text;
+  }
+  //closes the image modal
+  close = () => { 
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    this.modalSrc = ""
+  }
+
   constructor() {}
   ngOnInit() {}
 }
