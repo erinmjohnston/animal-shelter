@@ -31,39 +31,47 @@
   </div>
   <div class="row">
     <div class="col">
-      <mat-card class="toby">
+      <mat-card class="cardShadow">
         <mat-card-header>
           <mat-card-title>Toby</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/toby.jpg">
+        <img mat-card-image class="petPics" src="../assets/img/toby.jpg" (click)="show('toby', 
+        'Toby has quite a lot of energy. He loves to run at the speed of light.')">
         <mat-card-content>
           <p id="petDesc">Siberian Husky, Male, 3 years old</p>
         </mat-card-content>
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="toby">
+      <mat-card class="cardShadow">
         <mat-card-header>
           <mat-card-title>Simon</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/simon.jpg">
+        <img mat-card-image class="petPics" src="../assets/img/simon.jpg" (click)="show('simon', 
+          'Simon is extremely playful, when he is awake.')">
         <mat-card-content>
           <p id="petDesc">Part Siamese, Male, 6 years old</p>
         </mat-card-content>
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="toby">
+      <mat-card class="cardShadow">
         <mat-card-header>
           <mat-card-title>Lola</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/lola.jpg">
+        <img mat-card-image class="petPics" src="../assets/img/lola.jpg" (click)="show('lola', 
+        'Lola is softer than pure cotton.')">
         <mat-card-content>
           <p id="petDesc">Chinchilla, Female, 2 years old</p>
         </mat-card-content>
       </mat-card>
     </div>
   </div>
+</div>
 
+<div id="myModal" class="modal">
+  <span class="close" (click)="close()">&times;</span>
+  <img class="modal-content" id="img01" [src]="modalSrc">
+  <div id="caption">{{captionText}}</div>
 </div>
 
