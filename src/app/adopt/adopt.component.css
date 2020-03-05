@@ -45,3 +45,8 @@ mat-checkbox {
 .fullwidth {
   width: calc(80% + 22px);
 }
+
+#submitMessage {
+  margin-top: 50px;
+  display: none;
+}

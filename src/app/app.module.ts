@@ -20,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
-import { LostFoundComponent } from './lost-found/lost-found.component';
+import { LostComponent } from './lost/lost.component';
 import { AdoptComponent } from './adopt/adopt.component';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { AdoptComponent } from './adopt/adopt.component';
     HeaderComponent,
     VolunteerComponent,
     HomeComponent,
-    LostFoundComponent,
+    LostComponent,
     AdoptComponent
   ],
   imports: [
