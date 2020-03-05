@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston and Elliot Murdock */
+
 import { Component, OnInit } from '@angular/core';
 import { Option } from '../models/option';
 import { AdoptionApplication } from '../models/adoption-application';
@@ -20,12 +22,12 @@ export class AdoptComponent implements OnInit {
   adoptionApplicationModel = new AdoptionApplication('', '', '', null, '', '',
   '', '', '', '', '', '');
 
-  formSubmit() {
+  formSubmit = function() {
     const form = document.getElementById('adoptForm');
     form.style.display = 'none';
     const message = document.getElementById('submitMessage');
     message.style.display = 'block';
-  }
+  };
 
   constructor() { }
 

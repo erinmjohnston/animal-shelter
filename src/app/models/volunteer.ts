@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston */
+
 export class Volunteer {
   constructor(
     public firstName: string,

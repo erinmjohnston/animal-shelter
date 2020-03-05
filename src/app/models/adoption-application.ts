@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston */
+
 export class AdoptionApplication {
   constructor(
     public firstName: string,

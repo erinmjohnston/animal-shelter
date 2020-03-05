@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston and Elliot Murdock */
+
 import { Component, OnInit } from '@angular/core';
 import {Option} from '../models/option';
 
@@ -29,37 +31,34 @@ export class HomeComponent implements OnInit {
 
   selectedPetType = '';
   selectedGender = '';
-
   searchMessage = '';
+  captionText = '';
+  modalSrc = '';
 
   searchForPets(petType, gender) {
     if (petType !== '' && gender !== '') {
       const petsOfTheMonth = document.getElementById('petsOfMonth');
       petsOfTheMonth.style.display = 'none';
       this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
-    }
-    else {
+    } else {
       const petTypeError = document.getElementById('petTypeError');
       petTypeError.style.display = 'block';
     }
   }
 
-  captionText = ""
-  modalSrc = ""
-
-  //displays the image modal 
+  // displays the image modal
   show = (name, text) => {
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("img01");
-    modal.style.display = "block";
-    this.modalSrc = "".concat("../assets/img/", name, ".jpg"); //"../assets/img/lola.jpg"
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('img01');
+    modal.style.display = 'block';
+    this.modalSrc = ''.concat('../assets/img/', name, '.jpg'); // "../assets/img/lola.jpg"
     this.captionText = text;
   }
-  //closes the image modal
-  close = () => { 
-    const modal = document.getElementById("myModal");
-    modal.style.display = "none";
-    this.modalSrc = ""
+  // closes the image modal
+  close = () => {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+    this.modalSrc = '';
   }
 
   constructor() {}

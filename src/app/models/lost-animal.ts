@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston */
+
 export class LostAnimal {
   constructor(
   public petType: string,

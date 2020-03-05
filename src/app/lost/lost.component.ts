@@ -1,3 +1,5 @@
+/* Authors: Erin Johnston and Elliot Murdock */
+
 import { Component, OnInit } from '@angular/core';
 import { Option } from '../models/option';
 import {LostAnimal} from '../models/lost-animal';
