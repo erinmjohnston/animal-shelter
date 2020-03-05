@@ -20,7 +20,7 @@ export class LostFoundComponent implements OnInit {
   lostAnimalModel = new LostAnimal('', '', '', '', '', '', null, false,
     '', '', '', '', null);
 
-  formSubmit() {
+  formSubmit = function() {
     const form = document.getElementById('lostAnimalForm');
     form.style.display = 'none';
     const message = document.getElementById('submitMessage');
