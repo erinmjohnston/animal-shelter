@@ -11,7 +11,7 @@ export class VolunteerComponent implements OnInit {
   volunteerModel = new Volunteer('', '', '', null, '', false, false,
     false, false)
 
-  formSubmit() {
+  formSubmit = function() {
     const form = document.getElementById('volunteerForm');
     form.style.display = 'none';
     const message = document.getElementById('submitMessage');
