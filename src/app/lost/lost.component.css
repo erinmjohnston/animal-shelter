@@ -1,0 +1,62 @@
+/* Authors: Erin Johnston and Elliot Murdock */
+
+#lostAnimalForm {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  width: 50%;
+}
+
+.textInput {
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 40%;
+  border: 1px solid #ced4da;
+  padding: 5px 0px 5px 5px;
+  box-sizing: border-box;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: black;
+}
+
+textarea {
+  width: 85%;
+  border: 1px solid;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+::placeholder {
+  color: #b0b0b0;
+}
+
+#petTypeSelect {
+  color: #b0b0b0;
+}
+
+.datepicker {
+  position: relative;
+  top: 8px;
+  left: -60px;
+}
+
+#locationInput {
+  position: relative;
+  left: -40px;
+}
+
+.collarRadio {
+  padding-left: 2rem;
+}
+
+#chooseFile {
+  margin-left: 2rem;
+}
+
+#submitMessage {
+  margin-top: 50px;
+  display: none;
+}

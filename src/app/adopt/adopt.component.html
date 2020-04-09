@@ -1,0 +1,74 @@
+<meta name="authors" content="Erin Johnston">
+<!doctype html>
+<html lang="en">
+<div class="container">
+  <div class="centered" id="adoptForm">
+    <h1>Adoption Application</h1>
+    <p>Thank you for your interest in adopting! Please fill out the application below to get started.</p>
+    <form #adoptForm="ngForm">
+      <h2>Personal Information</h2>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="First name" name="firstName"
+                 [(ngModel)]="adoptionApplicationModel.firstName">
+          <input matInput class="textInput form-control" placeholder="Last name" name="lastName"
+                 [(ngModel)]="adoptionApplicationModel.lastName">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="Email address" name="email"
+                 [(ngModel)]="adoptionApplicationModel.email">
+          <input matInput class="textInput form-control" placeholder="Phone number" name="phone"
+                 [(ngModel)]="adoptionApplicationModel.phone">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control fullwidth" placeholder="Street address" name="address1"
+                 [(ngModel)]="adoptionApplicationModel.address1">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control fullwidth" placeholder="Street address 2" name="address2"
+                 [(ngModel)]="adoptionApplicationModel.address2">
+        </div>
+      </div>
+      <div class="form-group col-xs-6">
+        <div class="row">
+          <input matInput class="textInput form-control" placeholder="City" name="city"
+                 [(ngModel)]="adoptionApplicationModel.city">
+          <input matInput class="textInput form-control" placeholder="State" name="state"
+                 [(ngModel)]="adoptionApplicationModel.state">
+        </div>
+      </div>
+      <h2>Animal Information</h2>
+      <div class="form-group">
+        <div class="row">
+          <select required class="textInput custom-select" id="petTypeSelect" name="petType"
+                  [(ngModel)]="adoptionApplicationModel.petType">
+            <option disabled>Pet Type</option>
+            <option *ngFor="let pet of pets" [value]="pet.value">{{pet.viewValue}}</option>
+          </select>
+          <input matInput required class="textInput form-control" placeholder="Animal Name" name="animalName"
+                 [(ngModel)]="adoptionApplicationModel.animalName">
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Why would you like to adopt?</p>
+        <textarea rows="10" name="adoptReason" [(ngModel)]="adoptionApplicationModel.adoptReason"></textarea>
+      </div>
+      <div class="form-group">
+        <p>What is your prior experience with pets?</p>
+        <textarea rows="10" name="petExperience" [(ngModel)]="adoptionApplicationModel.petExperience"></textarea>
+      </div>
+      <button class="btn btn-primary" (click)="formSubmit()">Submit</button>
+    </form>
+  </div>
+  <div class="centered" id="submitMessage">
+    <h2>Thank you for submitting your animal adoption application.</h2>
+    <p>This is the information you submitted:</p>
+    {{adoptionApplicationModel | json}}
+  </div>
+</div>

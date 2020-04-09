@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'theme.css';
+
+* {
+  font-family: Roboto;
+}
+
+h1 {
+  font-size: calc((3vw + 4vh) / 2);
+}
+
+h2 {
+  font-size: calc((2vw + 3vh) / 2);
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 5%);
+}
+
+html, body {
+  overflow-x: hidden;
+}
