@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import {LostComponent} from './lost/lost.component';
 import {AdoptComponent} from './adopt/adopt.component';
+import {AdoptLoginComponent} from './adopt-login/adopt-login.component';
 
 const routes: Routes = [
   {

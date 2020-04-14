@@ -5,7 +5,7 @@ export class Volunteer {
     public firstName: string,
     public lastName: string,
     public email: string,
-    public phone: number,
+    public phone: string,
     public volunteerReason: string,
     public longTermFoster: boolean,
     public inShelter: boolean,

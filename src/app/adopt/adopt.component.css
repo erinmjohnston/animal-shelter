@@ -20,12 +20,6 @@ textarea {
   border: 1px solid;
 }
 
-#adoptForm {
-  margin-top: 10px;
-  margin-bottom: 100px;
-  width: 50%;
-}
-
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -34,6 +28,27 @@ textarea {
 #submitMessage {
   margin-top: 50px;
   display: none;
+}
+
+#adoptForm {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  width: 50%;
+  display: none;
+}
+
+#sessionForm {
+  max-width: 50%;
+  margin-top: 50px;
+}
+
+#hiddenFields {
+  visibility: hidden;
+  display: none;
+}
+
+#submitMsgButtons {
+  margin-top: 20px;
 }
 
 mat-checkbox {
@@ -46,9 +61,4 @@ mat-checkbox {
 
 .fullwidth {
   width: calc(80% + 22px);
-}
-
-#submitMessage {
-  margin-top: 50px;
-  display: none;
 }
