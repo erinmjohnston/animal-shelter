@@ -1,5 +1,9 @@
 /* Authors: Erin Johnston and Elliot Murdock */
 
+.centered {
+  transform: translate(-45%, 5%);
+}
+
 #lostAnimalForm {
   margin-top: 10px;
   margin-bottom: 100px;

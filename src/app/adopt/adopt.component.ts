@@ -3,6 +3,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Option } from '../models/option';
 import { AdoptionApplication } from '../models/adoption-application';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { isEmptyExpression } from '@angular/compiler';
+import { SignIn } from '../models/sign-in';
 
 @Component({
   selector: 'app-adopt',
@@ -10,6 +13,8 @@ import { AdoptionApplication } from '../models/adoption-application';
   styleUrls: ['./adopt.component.css']
 })
 export class AdoptComponent implements OnInit {
+
+  constructor(private http: HttpClient) {}
 
   pets: Option[] = [
     {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
@@ -19,19 +24,80 @@ export class AdoptComponent implements OnInit {
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
 
-  adoptionApplicationModel = new AdoptionApplication('', '', '', null, '', '',
+  phpResponse = '';
+  signInModel = new SignIn('','');
+  adoptionApplicationModel = new AdoptionApplication('', '', '', '', '', '',
   '', '', '', '', '', '');
 
-  formSubmit = function() {
+  confirm = function() { //hides adoptForm and displays submitMessage
     const form = document.getElementById('adoptForm');
     form.style.display = 'none';
     const message = document.getElementById('submitMessage');
     message.style.display = 'block';
   };
 
-  constructor() { }
+  displayAdoptForm = function() { //hides sessionForm, submitMessage and displays adoptForm
+    const form = document.getElementById('adoptForm');
+    form.style.display = 'block';
+    const session = document.getElementById('sessionForm');
+    session.style.display = 'none';
+    const message = document.getElementById('submitMessage');
+    message.style.display = 'none';
+  };
 
-  ngOnInit() {
-  }
+  displayPreviousSubmission = function() { //hides sessionForm and displays submitMessage
+    const message = document.getElementById('submitMessage');
+    message.style.display = 'block';
+    const session = document.getElementById('sessionForm');
+    session.style.display = 'none';
+  };
+
+  isEmpty = function (obj) { //checks for empty data, used for checking if returning user
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+  };
+
+  onSubmitApply = function(form: any): void {
+
+    let params = JSON.stringify(form);
+
+    this.http.post('http://localhost/animal-shelter/adoption-form.php', params)
+    .subscribe((data) => {
+      this.phpResponse = data;
+      if (this.isEmpty(data)) { //new user, display adoption application form
+        this.displayAdoptForm();
+      } else { //otherwise, display application corresponding to that username and password
+        this.displayPreviousSubmission();
+      }
+    }, (error) => {
+      console.log(error);
+      this.phpResponse = "There was an error. Please resubmit the form.";
+    })
+  };
+
+  onSubmitLogin = function(form: any): void {
+
+    let params = JSON.stringify(form);
+
+    this.http.post('http://localhost/animal-shelter/login.php', params)
+    .subscribe((data) => {
+      this.phpResponse = data;
+      if (this.isEmpty(data)) { //new user, display adoption application form
+        this.displayAdoptForm();
+      } else { //otherwise, display application corresponding to that username and password
+        this.displayPreviousSubmission();
+      }
+    }, (error) => {
+      console.log(error);
+      this.phpResponse = "There was an error. Please resubmit the form.";
+    })
+  };
+
+
+
+  ngOnInit() {}
 
 }

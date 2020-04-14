@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
   MatCardModule,
@@ -22,6 +23,7 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
 import { LostComponent } from './lost/lost.component';
 import { AdoptComponent } from './adopt/adopt.component';
+import { AdoptLoginComponent } from './adopt-login/adopt-login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { AdoptComponent } from './adopt/adopt.component';
     VolunteerComponent,
     HomeComponent,
     LostComponent,
-    AdoptComponent
+    AdoptComponent,
+    AdoptLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { AdoptComponent } from './adopt/adopt.component';
     AppRoutingModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

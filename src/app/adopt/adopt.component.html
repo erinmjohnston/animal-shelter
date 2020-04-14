@@ -1,11 +1,12 @@
 <meta name="authors" content="Erin Johnston">
 <!doctype html>
 <html lang="en">
+
 <div class="container">
   <div class="centered" id="adoptForm">
     <h1>Adoption Application</h1>
     <p>Thank you for your interest in adopting! Please fill out the application below to get started.</p>
-    <form #adoptForm="ngForm">
+    <form #adoptForm="ngForm" (ngSubmit)="onSubmitApply(adoptForm.value)">
       <h2>Personal Information</h2>
       <div class="form-group col-xs-6">
         <div class="row">
@@ -43,6 +44,12 @@
                  [(ngModel)]="adoptionApplicationModel.state">
         </div>
       </div>
+      <div id="hiddenFields">
+        <div class="row">
+          <input matInput class="textInput form-control" name="username" [(ngModel)]="signInModel.username">
+          <input matInput class="textInput form-control" name="password" [(ngModel)]="signInModel.password">
+        </div>
+      </div>
       <h2>Animal Information</h2>
       <div class="form-group">
         <div class="row">
@@ -63,12 +70,35 @@
         <p>What is your prior experience with pets?</p>
         <textarea rows="10" name="petExperience" [(ngModel)]="adoptionApplicationModel.petExperience"></textarea>
       </div>
-      <button class="btn btn-primary" (click)="formSubmit()">Submit</button>
+      <button class="btn btn-primary" (click)="confirm()">Submit</button>
     </form>
   </div>
-  <div class="centered" id="submitMessage">
-    <h2>Thank you for submitting your animal adoption application.</h2>
+</div>
+<div class="container" id="sessionForm">
+  <div class="centered">
+      <h1> Welcome to the adoption application</h1>
+      <h2> Sign in to apply! </h2>
+      <form #signForm="ngForm" (ngSubmit)="onSubmitLogin(signForm.value)"> 
+          Username: <input type="text" name="username" class="form-control" placeholder="Username" 
+          autofocus required [(ngModel)]="signInModel.username"/><br/>
+          Password: <input type="password" name="password" class="form-control" placeholder="Password" 
+          required [(ngModel)]="signInModel.password"/> <br/>
+          <input type="submit" value="Sign in" class="btn btn-primary" />  
+      </form>
+  </div>
+</div>
+<div class="container" id="submitMessage">
+  <div class="centered">
+    <h2>Thank you <font color="green">{{signInModel.username}}</font> for your adoption application.</h2>
     <p>This is the information you submitted:</p>
-    {{adoptionApplicationModel | json}}
+    <font color="green" style="font-style:italic">
+    {{ phpResponse | json }}
+    </font>
+    <div id="submitMsgButtons">
+      <button class="btn btn-primary" (click)="displayAdoptForm()" style="margin-right: 10px;">Update</button>
+      <button class="btn btn-light" style="border: 1px solid lightgray;">
+        <a href="#">Back to home</a>
+      </button>
+    </div>
   </div>
 </div>
