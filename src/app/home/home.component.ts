@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
       const petsOfTheMonth = document.getElementById('petsOfMonth');
       petsOfTheMonth.style.display = 'none';
       this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
-      this.http.get<Array<Pet>>('http://localhost/cs4640/animalShelter/main.php?petType=' + petType + '&gender=' + gender)
+      this.http.get<Array<Pet>>('http://localhost/animal-shelter/main.php?petType=' + petType + '&gender=' + gender)
         .subscribe(
           (data) => {
             console.log('Response ', data);
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   getFeaturedPets() {
-    this.http.get<Array<Pet>>('http://localhost/cs4640/animalShelter/petsOfMonth.php')
+    this.http.get<Array<Pet>>('http://localhost/animal-shelter/petsOfMonth.php')
       .subscribe(
         (data) => {
           console.log('Response ', data);
