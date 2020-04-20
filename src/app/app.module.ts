@@ -52,8 +52,7 @@ import { AdoptLoginComponent } from './adopt-login/adopt-login.component';
     AppRoutingModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    HttpClientModule
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
