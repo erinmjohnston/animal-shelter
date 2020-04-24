@@ -23,6 +23,7 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
 import { LostComponent } from './lost/lost.component';
 import { AdoptComponent } from './adopt/adopt.component';
+import { AboutComponent } from './about/about.component';
 import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
@@ -34,6 +35,7 @@ import { DonateComponent } from './donate/donate.component';
     HomeComponent,
     LostComponent,
     AdoptComponent,
+    AboutComponent,
     DonateComponent
   ],
   imports: [
