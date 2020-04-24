@@ -24,6 +24,7 @@ export class AdoptComponent implements OnInit {
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
 
+  error = '';
   phpResponse = '';
   signInModel = new SignIn('','');
   adoptionApplicationModel = new AdoptionApplication('', '', '', '', '', '',
@@ -67,14 +68,10 @@ export class AdoptComponent implements OnInit {
     this.http.post('http://localhost/animal-shelter/adoption-form.php', params)
     .subscribe((data) => {
       this.phpResponse = data;
-      if (this.isEmpty(data)) { //new user, display adoption application form
-        this.displayAdoptForm();
-      } else { //otherwise, display application corresponding to that username and password
-        this.displayPreviousSubmission();
-      }
+      console.log(this.phpResponse);
     }, (error) => {
       console.log(error);
-      this.phpResponse = "There was an error. Please resubmit the form.";
+      this.error = "There was an error. Please resubmit the form. Make sure email is included if not already.";
     })
   };
 
@@ -92,7 +89,7 @@ export class AdoptComponent implements OnInit {
       }
     }, (error) => {
       console.log(error);
-      this.phpResponse = "There was an error. Please resubmit the form.";
+      this.error = "There was an error with logging in.";
     })
   };
 

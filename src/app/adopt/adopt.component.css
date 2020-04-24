@@ -62,3 +62,8 @@ mat-checkbox {
 .fullwidth {
   width: calc(80% + 22px);
 }
+
+.error {
+  color: #ff5252; 
+  font-style: italic;
+}

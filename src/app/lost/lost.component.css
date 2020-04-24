@@ -1,7 +1,7 @@
 /* Authors: Erin Johnston and Elliot Murdock */
 
 .centered {
-  transform: translate(-45%, 5%);
+  transform: translate(-40%, 5%);
 }
 
 #lostAnimalForm {
@@ -63,4 +63,9 @@ textarea {
 #submitMessage {
   margin-top: 50px;
   display: none;
+}
+
+.error {
+  color: #ff5252; 
+  font-style: italic;
 }

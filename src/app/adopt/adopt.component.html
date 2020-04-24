@@ -91,9 +91,21 @@
   <div class="centered">
     <h2>Thank you <font color="green">{{signInModel.username}}</font> for your adoption application.</h2>
     <p>This is the information you submitted:</p>
-    <font color="green" style="font-style:italic">
-    {{ phpResponse | json }}
-    </font>
+    <p [ngClass]="{'error':true}" >{{error}}</p>
+    <ul id="prior" style="color: #1479ed; list-style-type: square; font-size: 20px;">
+      <li>First name: {{phpResponse[0]["firstName"]}}</li>
+      <li>Last name: {{phpResponse[0]["lastName"]}}</li>
+      <li>Email: {{phpResponse[0]["email"]}}</li>
+      <li>Phone: {{phpResponse[0]["phone"]}}</li>
+      <li>Address 1: {{phpResponse[0]["address1"]}}</li>
+      <li>Address 2: {{phpResponse[0]["address2"]}}</li>
+      <li>City: {{phpResponse[0]["city"]}}</li>
+      <li>State: {{phpResponse[0]["state"]}}</li>
+      <li>Pet type: {{phpResponse[0]["petType"]}}</li>
+      <li>Animal name: {{phpResponse[0]["animalName"]}}</li>
+      <li>Adopt reason: {{phpResponse[0]["adoptReason"]}}</li>
+      <li>Pet experience: {{phpResponse[0]["petExperience"]}}</li>
+    </ul>
     <div id="submitMsgButtons">
       <button class="btn btn-primary" (click)="displayAdoptForm()" style="margin-right: 10px;">Update</button>
       <button class="btn btn-light" style="border: 1px solid lightgray;">

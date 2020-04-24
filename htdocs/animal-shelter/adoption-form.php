@@ -94,6 +94,6 @@ if (! strlen($email) > 0) {
   $statement->closeCursor();
 
   // Send response (in json format) back the front end
-  echo json_encode(['content'=>$request]);
+  echo json_encode([$request]);
 }
 ?>

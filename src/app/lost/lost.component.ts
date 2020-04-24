@@ -22,6 +22,7 @@ export class LostComponent implements OnInit {
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
 
+  error = '';
   phpResponse = '';
   lostAnimalModel = new LostAnimal('', '', '', '', '', '', false,
     '', '', '', '', '');
@@ -41,7 +42,7 @@ export class LostComponent implements OnInit {
       this.phpResponse = data;    
     }, (error) => {
       console.log(error);
-      this.phpResponse = "There was an error. Please resubmit the form.";
+      this.error = "There was an error. Please resubmit the form. Make sure email is included if not already."
     })
   }
 
