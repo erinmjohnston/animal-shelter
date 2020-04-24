@@ -7,6 +7,7 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import {LostComponent} from './lost/lost.component';
 import {AdoptComponent} from './adopt/adopt.component';
 import {AdoptLoginComponent} from './adopt-login/adopt-login.component';
+import {AboutComponent} from './about/about.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'adopt',
     component: AdoptComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 

@@ -20,13 +20,13 @@
         <span style="width: 5vw; min-width: 10px;"></span>
         <button mat-flat-button color="accent" id="search" (click)="searchForPets(selectedPetType, selectedGender)">Search</button>
       </div>
-    <div class="container" class="pets">
-        <div class="row">
+    <div class="container pets">
+        <div>
           <h1 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h1>
         </div>
         <div class="row">
           <div class="col" *ngFor="let pet of responsePets">
-            <mat-card class="cardShadow" class="petCards">
+            <mat-card class="cardShadow petCards">
               <mat-card-header>
                 <mat-card-title>{{pet.name}}</mat-card-title>
               </mat-card-header>
@@ -42,13 +42,13 @@
     </div>
 
 
-<div class="container" class="pets" id="petsOfMonth">
+<div class="container pets" id="petsOfMonth">
   <div class="row">
     <h1 class="heading" id="month">Featured Pets</h1>
   </div>
   <div class="row">
     <div class="col">
-      <mat-card class="cardShadow" class="petCards">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
           <mat-card-title>{{this.featuredPets[0].name}}</mat-card-title>
         </mat-card-header>
@@ -59,7 +59,7 @@
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="cardShadow" class="petCards">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
           <mat-card-title>{{this.featuredPets[1].name}}</mat-card-title>
         </mat-card-header>
@@ -70,7 +70,7 @@
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="cardShadow" class="petCards">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
           <mat-card-title>{{this.featuredPets[2].name}}</mat-card-title>
         </mat-card-header>

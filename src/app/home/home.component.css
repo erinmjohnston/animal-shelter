@@ -50,8 +50,11 @@
 }
 
 .pets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: -9vh;
-  margin-left: 50px;
   margin-bottom: 100px;
 }
 

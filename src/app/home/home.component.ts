@@ -42,7 +42,13 @@ export class HomeComponent implements OnInit {
     if (petType !== '' && gender !== '') {
       const petsOfTheMonth = document.getElementById('petsOfMonth');
       petsOfTheMonth.style.display = 'none';
-      this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+      if (petType === 'Any' && gender === 'Any') {
+        this.searchMessage = 'You have searched for Any Pet.';
+      } else if (petType === 'Any') {
+        this.searchMessage = 'You have searched for Any ' + gender + ' Pet.';
+      } else {
+        this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+      }
       this.http.get<Array<Pet>>('http://localhost/animal-shelter/main.php?petType=' + petType + '&gender=' + gender)
         .subscribe(
           (data) => {
