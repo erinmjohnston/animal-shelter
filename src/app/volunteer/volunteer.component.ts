@@ -13,6 +13,7 @@ export class VolunteerComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  error = '';
   phpResponse = '';
   volunteerModel = new Volunteer('', '', '', '', '', false, false,
     false, false)
@@ -35,7 +36,7 @@ export class VolunteerComponent implements OnInit {
       this.phpResponse = data; 
     }, (error) => {
       console.log(error);
-      this.phpResponse = "There was an error. Please resubmit the form.";
+      this.error = "There was an error. Please resubmit the form. Make sure email is included if not already."
     })
   
   }

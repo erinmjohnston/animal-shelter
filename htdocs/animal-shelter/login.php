@@ -1,13 +1,7 @@
 <?php
 
-  //could create variable in session object - once query works and you have username/password, set sessionvariable equal to 
-  //true. Do things based on whether logged-in is true. 
-  session_start();
-  //first time session starts, client gets ID
-  //$_SESSION object is an array that you can create indices for, key value pairs
-  //only the client with that certain session ID can access array elements
+  // session_start();
 
-  //if client id is still valid, resumes session and loads session object
   //session_destroy()
 
   header('Access-Control-Allow-Origin: http://localhost:4200');

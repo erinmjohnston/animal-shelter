@@ -82,9 +82,20 @@
   <div class="centered" id="submitMessage">
     <h2>Thank you for submitting your lost animal report.</h2>
     <p>This is the information you submitted:</p>
-    <font color="green" style="font-style:italic">
-      <!-- If confirm_msg is not empty, display the response from the PHP backend. -->
-    {{ phpResponse | json }}
-    </font>
+    <p [ngClass]="{'error':true}" >{{error}}</p>
+    <ul id="dataSent" style="color: #1479ed; list-style-type: square; font-size: 20px;">
+      <li>First name: {{phpResponse["content"]["firstName"]}}</li>
+      <li>Last name: {{phpResponse["content"]["lastName"]}}</li>
+      <li>Email: {{phpResponse["content"]["email"]}}</li>
+      <li>Phone: {{phpResponse["content"]["phone"]}}</li>
+      <li>Pet type: {{phpResponse["content"]["petType"]}}</li>
+      <li>Pet name: {{phpResponse["content"]["petName"]}}</li>
+      <li>Breed: {{phpResponse["content"]["breed"]}}</li>
+      <li>Color: {{phpResponse["content"]["color"]}}</li>
+      <li>Date: {{phpResponse["content"]["date"]}}</li>
+      <li>Location: {{phpResponse["content"]["location"]}}</li>
+      <li>Collar: {{phpResponse["content"]["collar"]}}</li>
+      <li>Description: {{phpResponse["content"]["physicalDescription"]}}</li>
+    </ul>
   </div>
 </div>

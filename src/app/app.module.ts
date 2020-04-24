@@ -23,8 +23,8 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
 import { LostComponent } from './lost/lost.component';
 import { AdoptComponent } from './adopt/adopt.component';
-import { AdoptLoginComponent } from './adopt-login/adopt-login.component';
 import { AboutComponent } from './about/about.component';
+import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,8 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     LostComponent,
     AdoptComponent,
-    AdoptLoginComponent,
-    AboutComponent
+    AboutComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,

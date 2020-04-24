@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdoptLoginComponent } from './adopt-login.component';
+import { DonateComponent } from './donate.component';
 
-describe('AdoptLoginComponent', () => {
-  let component: AdoptLoginComponent;
-  let fixture: ComponentFixture<AdoptLoginComponent>;
+describe('DonateComponent', () => {
+  let component: DonateComponent;
+  let fixture: ComponentFixture<DonateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdoptLoginComponent ]
+      declarations: [ DonateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdoptLoginComponent);
+    fixture = TestBed.createComponent(DonateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
