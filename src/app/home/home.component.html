@@ -20,50 +20,63 @@
         <span style="width: 5vw; min-width: 10px;"></span>
         <button mat-flat-button color="accent" id="search" (click)="searchForPets(selectedPetType, selectedGender)">Search</button>
       </div>
-    <div class="row">
-      <h2 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h2>
+    <div class="container pets">
+        <div>
+          <h1 class="heading" id="searchMessage">{{[(this.searchMessage)]}}</h1>
+        </div>
+        <div class="row">
+          <div class="col" *ngFor="let pet of responsePets">
+            <mat-card class="cardShadow petCards">
+              <mat-card-header>
+                <mat-card-title>{{pet.name}}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image class="petPics" src="../assets/img/{{pet.image}}">
+              <mat-card-content>
+                <p class="petDesc">{{pet.breed}}, {{pet.gender}}, {{pet.age}}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
-</div>
 
-<div class="container" id="petsOfMonth">
+
+<div class="container pets" id="petsOfMonth">
   <div class="row">
-    <h1 class="heading" id="month">Pets of the Month</h1>
+    <h1 class="heading" id="month">Featured Pets</h1>
   </div>
   <div class="row">
     <div class="col">
-      <mat-card class="cardShadow">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
-          <mat-card-title>Toby</mat-card-title>
+          <mat-card-title>{{this.featuredPets[0].name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/toby.jpg" (click)="show('toby', 
-        'Toby has quite a lot of energy. He loves to run at the speed of light.')">
+        <img mat-card-image class="petPics" src="../assets/img/{{this.featuredPets[0].image}}" (click)="show(0)">
         <mat-card-content>
-          <p id="petDesc">Siberian Husky, Male, 3 years old</p>
+          <p class="petDesc">{{this.featuredPets[0].breed}}, {{this.featuredPets[0].gender}}, {{this.featuredPets[0].age}}</p>
         </mat-card-content>
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="cardShadow">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
-          <mat-card-title>Simon</mat-card-title>
+          <mat-card-title>{{this.featuredPets[1].name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/simon.jpg" (click)="show('simon', 
-          'Simon is extremely playful, when he is awake.')">
+        <img mat-card-image class="petPics" src="../assets/img/{{this.featuredPets[1].image}}" (click)="show(1)">
         <mat-card-content>
-          <p id="petDesc">Part Siamese, Male, 6 years old</p>
+          <p class="petDesc">{{this.featuredPets[1].breed}}, {{this.featuredPets[1].gender}}, {{this.featuredPets[1].age}}</p>
         </mat-card-content>
       </mat-card>
     </div>
     <div class="col">
-      <mat-card class="cardShadow">
+      <mat-card class="cardShadow petCards">
         <mat-card-header>
-          <mat-card-title>Lola</mat-card-title>
+          <mat-card-title>{{this.featuredPets[2].name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="petPics" src="../assets/img/lola.jpg" (click)="show('lola', 
-        'Lola is softer than pure cotton.')">
+        <img mat-card-image class="petPics" src="../assets/img/{{this.featuredPets[2].image}}" (click)="show(2)">
         <mat-card-content>
-          <p id="petDesc">Chinchilla, Female, 2 years old</p>
+          <p class="petDesc">{{this.featuredPets[2].breed}}, {{this.featuredPets[2].gender}}, {{this.featuredPets[2].age}}</p>
         </mat-card-content>
       </mat-card>
     </div>

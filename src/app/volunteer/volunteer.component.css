@@ -1,23 +1,23 @@
 /* Authors: Erin Johnston and Elliot Murdock */
 
 .centered {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 5%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-40%, 5%);
 }
 
 .textInput {
-    margin-top: 10px;
-    margin-right: 20px;
-    width: 40%;
-    border: 1px solid;
-    padding: 5px 0px 5px 5px;
-    box-sizing: border-box;
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 40%;
+  border: 1px solid;
+  padding: 5px 0px 5px 5px;
+  box-sizing: border-box;
 }
 
 textarea {
-    width: 85%;
-    border: 1px solid;
+  width: 85%;
+  border: 1px solid;
 }
 
 #volunteerForm {
@@ -42,4 +42,9 @@ mat-checkbox {
 
 .form-check {
   padding-left: 0;
+}
+
+.error {
+  color: #ff5252; 
+  font-style: italic;
 }

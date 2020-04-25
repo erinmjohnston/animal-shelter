@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule} from '@angular/forms';
 import {
@@ -22,6 +23,8 @@ import { VolunteerComponent } from './volunteer/volunteer.component';
 import { HomeComponent } from './home/home.component';
 import { LostComponent } from './lost/lost.component';
 import { AdoptComponent } from './adopt/adopt.component';
+import { AboutComponent } from './about/about.component';
+import { DonateComponent } from './donate/donate.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,15 @@ import { AdoptComponent } from './adopt/adopt.component';
     VolunteerComponent,
     HomeComponent,
     LostComponent,
-    AdoptComponent
+    AdoptComponent,
+    AboutComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

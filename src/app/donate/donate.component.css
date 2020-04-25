@@ -1,0 +1,20 @@
+/* Authors: Erin Johnston and Elliot Murdock */
+
+.centered {
+    transform: translate(-50%, 10%);
+}
+
+#donate {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 50%;
+}
+
+#donateOptions {
+  float: left;
+  padding-right: 15px;
+}
+
+#dog {
+    transform: translate(5%, 10%);
+}

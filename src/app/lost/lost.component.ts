@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Option } from '../models/option';
 import {LostAnimal} from '../models/lost-animal';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-lost-found',
@@ -10,6 +11,8 @@ import {LostAnimal} from '../models/lost-animal';
   styleUrls: ['./lost.component.css']
 })
 export class LostComponent implements OnInit {
+
+  constructor(private http: HttpClient) {}
 
   pets: Option[] = [
     {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
@@ -19,19 +22,29 @@ export class LostComponent implements OnInit {
     {value: 'Reptiles', viewValue: 'Reptile'}
   ];
 
-  lostAnimalModel = new LostAnimal('', '', '', '', '', '', null, false,
-    '', '', '', '', null);
+  error = '';
+  phpResponse = '';
+  lostAnimalModel = new LostAnimal('', '', '', '', '', '', false,
+    '', '', '', '', '');
 
-  formSubmit = function() {
+  confirm = function() {
     const form = document.getElementById('lostAnimalForm');
     form.style.display = 'none';
     const message = document.getElementById('submitMessage');
     message.style.display = 'block';
   }
 
-  constructor() { }
+  onSubmit = function(form: any): void {
+    let params = JSON.stringify(form);
 
-  ngOnInit() {
+    this.http.post('http://localhost/animal-shelter/lostPet-form.php', params)
+    .subscribe((data) => {
+      this.phpResponse = data;    
+    }, (error) => {
+      console.log(error);
+      this.error = "There was an error. Please resubmit the form. Make sure email is included if not already."
+    })
   }
 
+  ngOnInit() {}
 }

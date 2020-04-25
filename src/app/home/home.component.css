@@ -41,7 +41,7 @@
 
 #searchMessage {
   position: relative;
-  top: -9vh;
+  top: -3vh;
 }
 
 #month {
@@ -49,11 +49,22 @@
   top: -9vh;
 }
 
-#petsOfMonth {
+.pets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -9vh;
   margin-bottom: 100px;
 }
 
-#petDesc {
+.petCards {
+  width: 350px;
+  height: 375px;
+  margin-bottom: 10px;
+}
+
+.petDesc {
   font-weight: 570;
 }
 
@@ -65,16 +76,6 @@
 .cardShadow:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
-
-
-
-
-
-
-
-
-
 
 /* The Modal (background) */
 .modal {

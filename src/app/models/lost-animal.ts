@@ -8,12 +8,11 @@ export class LostAnimal {
   public color: string,
   public date: string,
   public lastLocation: string,
-  public image: File,
   public collar: boolean,
   public description: string,
   public ownerFirstName: string,
   public ownerLastName: string,
   public ownerEmail: string,
-  public ownerPhone: number
+  public ownerPhone: string
   ) {}
 }

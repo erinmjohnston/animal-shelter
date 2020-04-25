@@ -5,7 +5,7 @@
     <div class="centered" id="volunteerForm">
       <h1>Volunteer Application</h1>
       <p>Thank you for your interest in volunteering! Please fill out the application below to get started.</p>
-      <form #volunteerForm="ngForm">
+      <form #volunteerForm="ngForm" (ngSubmit)="onSubmit(volunteerForm.value)">
         <div class="form-group col-xs-6">
           <div class="row">
             <input matInput class="textInput form-control" placeholder="First name" name="firstName"
@@ -29,18 +29,29 @@
         <div class="form-group">
           <p>What areas are you interested in volunteering?</p>
           <div class="form-check" name="volunteerAreas">
-            <mat-checkbox name="volunteerAreas" value="long-termFoster" class="form-control" [(ngModel)]="volunteerModel.longTermFoster">Long-term foster</mat-checkbox><br>
-            <mat-checkbox name="volunteerAreas" value="in-shelterCare" class="form-control" [(ngModel)]="volunteerModel.inShelter">In-shelter care</mat-checkbox><br>
-            <mat-checkbox name="volunteerAreas" value="fieldTrips" class="form-control" [(ngModel)]="volunteerModel.fieldTrips">Animal field trips</mat-checkbox><br>
-            <mat-checkbox name="volunteerAreas" value="ambassador" class="form-control" [(ngModel)]="volunteerModel.ambassador">Ambassador</mat-checkbox>
+            <mat-checkbox name="longTermFoster" value="long-termFoster" class="form-control" [(ngModel)]="volunteerModel.longTermFoster">Long-term foster</mat-checkbox><br>
+            <mat-checkbox name="inShelter" value="in-shelterCare" class="form-control" [(ngModel)]="volunteerModel.inShelter">In-shelter care</mat-checkbox><br>
+            <mat-checkbox name="fieldTrips" value="fieldTrips" class="form-control" [(ngModel)]="volunteerModel.fieldTrips">Animal field trips</mat-checkbox><br>
+            <mat-checkbox name="ambassador" value="ambassador" class="form-control" [(ngModel)]="volunteerModel.ambassador">Ambassador</mat-checkbox>
           </div>
         </div>
-        <button class="btn btn-primary" (click)="formSubmit()">Submit</button>
+        <button class="btn btn-primary" (click)="confirm()">Submit</button>
       </form>
     </div>
     <div class="centered" id="submitMessage">
       <h2>Thank you for submitting your volunteer form.</h2>
       <p>This is the information you submitted:</p>
-      {{volunteerModel | json}}
+      <p [ngClass]="{'error':true}" >{{error}}</p>
+      <ul id="dataSent" style="color: #1479ed; list-style-type: square; font-size: 20px;">
+        <li>First name: {{phpResponse["content"]["firstName"]}}</li>
+        <li>Last name: {{phpResponse["content"]["lastName"]}}</li>
+        <li>Email: {{phpResponse["content"]["email"]}}</li>
+        <li>Phone: {{phpResponse["content"]["phone"]}}</li>
+        <li>Volunteer reason: {{phpResponse["content"]["volunteerReason"]}}</li>
+        <li>Long-term foster: {{phpResponse["content"]["longTermFoster"]}}</li>
+        <li>In-shelter care: {{phpResponse["content"]["inShelter"]}}</li>
+        <li>Field trips: {{phpResponse["content"]["fieldTrips"]}}</li>
+        <li>Ambassador: {{phpResponse["content"]["ambassador"]}}</li>
+      </ul>
     </div>
   </div>

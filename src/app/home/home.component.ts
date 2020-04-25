@@ -1,8 +1,9 @@
 /* Authors: Erin Johnston and Elliot Murdock */
 
 import { Component, OnInit } from '@angular/core';
-import {Option} from '../models/option';
-
+import { Option } from '../models/option';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import {Pet} from '../models/pet';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +17,11 @@ export class HomeComponent implements OnInit {
 
   pets: Option[] = [
     {value: 'Any', viewValue: 'Any'},
-    {value: 'Dogs and Puppies', viewValue: 'Dog/Puppy'},
-    {value: 'Cats and Kittens', viewValue: 'Cat/Kitten'},
-    {value: 'Rodents', viewValue: 'Rodent'},
-    {value: 'Birds', viewValue: 'Bird'},
-    {value: 'Reptiles', viewValue: 'Reptile'}
+    {value: 'Dog', viewValue: 'Dog'},
+    {value: 'Cat', viewValue: 'Cat'},
+    {value: 'Rodent', viewValue: 'Rodent'},
+    {value: 'Bird', viewValue: 'Bird'},
+    {value: 'Reptile', viewValue: 'Reptile'}
     ];
 
   genders: Option[] = [
@@ -32,27 +33,56 @@ export class HomeComponent implements OnInit {
   selectedPetType = '';
   selectedGender = '';
   searchMessage = '';
+  responsePets = new Array<Pet>();
   captionText = '';
   modalSrc = '';
+  featuredPets = new Array<Pet>();
 
   searchForPets(petType, gender) {
     if (petType !== '' && gender !== '') {
       const petsOfTheMonth = document.getElementById('petsOfMonth');
       petsOfTheMonth.style.display = 'none';
-      this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+      if (petType === 'Any' && gender === 'Any') {
+        this.searchMessage = 'You have searched for Any Pet.';
+      } else if (petType === 'Any') {
+        this.searchMessage = 'You have searched for Any ' + gender + ' Pet.';
+      } else {
+        this.searchMessage = 'You have searched for ' + gender + ' ' + petType + '.';
+      }
+      this.http.get<Array<Pet>>('http://localhost/animal-shelter/main.php?petType=' + petType + '&gender=' + gender)
+        .subscribe(
+          (data) => {
+            console.log('Response ', data);
+            this.responsePets = data;
+          }, (error) => {
+            console.log('Error ', error);
+          }
+        );
     } else {
       const petTypeError = document.getElementById('petTypeError');
       petTypeError.style.display = 'block';
     }
   }
 
+  getFeaturedPets() {
+    this.http.get<Array<Pet>>('http://localhost/animal-shelter/petsOfMonth.php')
+      .subscribe(
+        (data) => {
+          console.log('Response ', data);
+          this.featuredPets = data;
+        }, (error) => {
+          console.log('Error ', error);
+        }
+      );
+  }
+
   // displays the image modal
-  show = (name, text) => {
+  show = (featuredPet) => {
     const modal = document.getElementById('myModal');
-    const modalImg = document.getElementById('img01');
     modal.style.display = 'block';
-    this.modalSrc = ''.concat('../assets/img/', name, '.jpg'); // "../assets/img/lola.jpg"
-    this.captionText = text;
+    this.modalSrc = '../assets/img/' + this.featuredPets[featuredPet].image; // "../assets/img/lola12.jpg"
+    this.captionText = '' + this.featuredPets[featuredPet].breed + ', ' + this.featuredPets[featuredPet].gender + ', '
+      + this.featuredPets[featuredPet].age;
   }
   // closes the image modal
   close = () => {
@@ -61,6 +91,8 @@ export class HomeComponent implements OnInit {
     this.modalSrc = '';
   }
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.getFeaturedPets();
+  }
   ngOnInit() {}
 }
