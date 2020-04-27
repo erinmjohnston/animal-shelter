@@ -37,11 +37,13 @@ export class HomeComponent implements OnInit {
   captionText = '';
   modalSrc = '';
   featuredPets = new Array<Pet>();
+  showSearch = false;
 
   searchForPets(petType, gender) {
     if (petType !== '' && gender !== '') {
       const petsOfTheMonth = document.getElementById('petsOfMonth');
       petsOfTheMonth.style.display = 'none';
+      this.showSearch = true;
       if (petType === 'Any' && gender === 'Any') {
         this.searchMessage = 'You have searched for Any Pet.';
       } else if (petType === 'Any') {
